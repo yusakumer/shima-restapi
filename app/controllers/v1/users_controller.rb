@@ -12,14 +12,17 @@ class V1::UsersController < ApplicationController
 
   def create
     User.create!(user_params)
+    head :created
   end
 
   def update
     @user.update!(user_params)
+    head :no_content
   end
 
   def destroy
     @user.destroy!
+    head :no_content
   end
 
   private
